@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <link rel="stylesheet" href="layout.css"> >
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detwal Solutions</title>
+    <link rel="stylesheet" href="layout.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,6 +42,26 @@
             height: auto;
             border-radius: 10px;
         }
+        
+        /* Floating Call Button */
+        .call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .call-button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -54,5 +74,9 @@
             <img src="https://images.app.goo.gl/Ti9DnGNP3p5ywZMY8" alt="Detwal Solutions">
         </div>
     </div>
+
+    <!-- Call Button -->
+    <a href="tel:+916375064350" class="call-button">📞</a>
+
 </body>
 </html>
