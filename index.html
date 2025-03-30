@@ -3,69 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Card</title>
+    <title>Profile Card</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f5f0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Use min-height for better responsiveness */
-            margin: 0;
+            height: 100vh;
+            background-color: #f5f2eb;
+            font-family: Arial, sans-serif;
         }
         .card {
             display: flex;
-            align-items: center;
             background: white;
-            padding: 30px; /* Increased padding for more space */
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px; /* Slightly increased max-width */
-            min-height: 260px; /* Increased min-height */
+            align-items: center;
         }
         .card img {
-            width: 140px; /* Slightly increased image width */
-            height: 240px; /* Slightly increased image height */
+            width: 200px;
+            height: auto;
             border-radius: 10px;
-            object-fit: cover;
-            margin-right: 30px; /* Increased margin for spacing */
+            margin-right: 20px;
         }
-        .info {
-            flex: 1;
+        .card-content {
+            text-align: center;
         }
-        .info h2 {
-            margin: 0 0 5px 0; /* Added some bottom margin */
-            font-size: 24px; /* Slightly larger name */
-            font-weight: bold;
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
         }
-        .info p {
-            margin: 5px 0 15px 0; /* Added more bottom margin */
+        .card p {
             color: gray;
-            font-size: 16px; /* Slightly larger profession text */
+            font-size: 16px;
         }
-        .button {
+        .btn {
             display: inline-block;
-            padding: 12px 20px; /* Increased button padding */
             background: black;
             color: white;
+            padding: 10px 20px;
             text-decoration: none;
-            border-radius: 8px; /* Slightly more rounded button */
-            margin-top: 15px; /* Increased top margin for the button */
-            font-size: 16px; /* Slightly larger button text */
+            border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-
     <div class="card">
-        <img src="https://i.ibb.co/hFD07VGL/1000001310-removebg-preview.png" alt="Daksh">
-        <div class="info">
+        <img src="image.png" alt="Profile Picture">
+        <div class="card-content">
             <h2>Daksh</h2>
             <p>Software Developer</p>
-            <a href="mailto:dakshdetwal10@gmail.com" class="button">Reach out</a>
+            <a href="#" class="btn">Reach out</a>
         </div>
     </div>
-
 </body>
 </html>
