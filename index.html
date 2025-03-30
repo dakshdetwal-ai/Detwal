@@ -3,80 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detwal Solutions</title>
-    <link rel="stylesheet" href="layout.css">
+    <title>Daksh - Software Developer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
+            background-color: #f8f5f0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #222;
-            color: white;
         }
-        .text {
-            max-width: 50%;
-            text-align: left;
-            padding: 20px;
-        }
-        .text h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        .text p {
-            font-size: 1.2em;
-            opacity: 0.8;
-        }
-        .image {
-            max-width: 50%;
-        }
-        .image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        /* Floating Call Button */
-        .call-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #28a745;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 24px;
-            text-decoration: none;
+        .container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .call-button:hover {
-            background-color: #218838;
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .info {
+            text-align: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: gray;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text">
-            <h1>Detwal Solutions</h1>
-            <p>Don't take work load, hire us to make a masterpiece for you.</p>
-        </div>
-        <div class="image">
-            <img src="https://images.app.goo.gl/Ti9DnGNP3p5ywZMY8" alt="Detwal Solutions">
+        <img src="image.png" alt="Daksh">
+        <div class="info">
+            <div class="title">Daksh</div>
+            <div class="subtitle">Software Developer</div>
+            <a href="mailto:dakshdetwal10@gmail.com" class="button">Reach out</a>
         </div>
     </div>
-
-    <!-- Call Button -->
-    <a href="tel:+916375064350" class="call-button">📞</a>
-
 </body>
 </html>
