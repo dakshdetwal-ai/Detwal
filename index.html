@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daksh - Software Developer</title>
+    <title>Portfolio Card</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,55 +12,58 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
-        .container {
+        .card {
             display: flex;
             align-items: center;
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
         }
-        img {
-            width: 200px;
-            height: auto;
+        .card img {
+            width: 120px;
+            height: 120px;
             border-radius: 10px;
+            object-fit: cover;
             margin-right: 20px;
         }
         .info {
-            text-align: center;
+            flex: 1;
         }
-        .title {
-            font-size: 24px;
+        .info h2 {
+            margin: 0;
+            font-size: 20px;
             font-weight: bold;
         }
-        .subtitle {
-            font-size: 18px;
+        .info p {
+            margin: 5px 0;
             color: gray;
         }
         .button {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: black;
+            padding: 10px 15px;
+            background: black;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #333;
+            border-radius: 6px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://imgur.com/a/Uds7tjV" alt="Daksh">
+
+    <div class="card">
+        <img src="https://i.imgur.com/Uds7tjV.jpg" alt="Daksh">
         <div class="info">
-            <div class="title">Daksh</div>
-            <div class="subtitle">Software Developer</div>
+            <h2>Daksh</h2>
+            <p>Software Developer</p>
             <a href="mailto:dakshdetwal10@gmail.com" class="button">Reach out</a>
         </div>
     </div>
+
 </body>
 </html>
 
