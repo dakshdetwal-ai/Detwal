@@ -3,94 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Card</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Calculator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f5f0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            height: 100vh;
+            background-color: #222;
         }
-        .card {
-            display: flex;
-            align-items: center;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 450px; /* Adjusted max-width to accommodate icons */
-            min-height: 260px;
-        }
-        .card img {
-            width: 140px;
-            height: 240px;
+        .calculator {
+            width: 300px;
+            background-color: #111;
+            padding: 20px;
             border-radius: 10px;
-            object-fit: cover;
-            margin-right: 30px;
+            box-shadow: 0 0 10px #00ff00;
         }
-        .info {
-            flex: 1;
+        .display {
+            width: 100%;
+            height: 50px;
+            background-color: #000;
+            color: #0f0;
+            text-align: right;
+            font-size: 2em;
+            padding: 10px;
+            border: none;
+            outline: none;
         }
-        .info h2 {
-            margin: 0 0 5px 0;
-            font-size: 24px;
-            font-weight: bold;
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
         }
-        .info p {
-            margin: 5px 0 15px 0;
-            color: gray;
-            font-size: 16px;
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            border: none;
+            background-color: #333;
+            color: #0f0;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .contact-icons {
-            margin-top: 15px;
-        }
-        .contact-icons a {
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 20px;
-            color: #333;
-            text-decoration: none;
-        }
-        .contact-icons a:hover {
-            color: #007bff; /* Example hover color */
-        }
-        .button {
-            display: inline-block;
-            padding: 12px 20px;
-            background: black;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-size: 16px;
+        button:active {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-
-    <div class="card">
-        <img src="https://i.ibb.co/hFD07VGL/1000001310-removebg-preview.png" alt="Daksh">
-        <div class="info">
-            <h2>Daksh</h2>
-            <p>Software Developer</p>
-            <div class="contact-icons">
-                <a href="tel:+916375064350" target="_blank" title="Call me">
-                    <i class="fas fa-phone"></i>
-                </a>
-                <a href="https://wa.me/+916375064350" target="_blank" title="WhatsApp Business">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://t.me/dakshdetwal1" target="_blank" title="Telegram">
-                    <i class="fab fa-telegram-plane"></i>
-                </a>
-            </div>
-            <a href="mailto:dakshdetwal10@gmail.com" class="button">Reach out</a>
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('%')">%</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="calculateResult()">=</button>
+            
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
         </div>
     </div>
 
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        function calculateResult() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
