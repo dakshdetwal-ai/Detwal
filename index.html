@@ -2,121 +2,235 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daksh Drycleaners</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    a:hover {
+      color: #0d6efd;
+    }
+
+    /* Header */
     header {
-      background-color: #0047ab;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
       display: flex;
-      justify-content: center;
-      background-color: #eee;
-      padding: 10px;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 24px;
+      color: #0d6efd;
+      cursor: default;
     }
     nav a {
-      text-decoration: none;
-      color: #0047ab;
-      font-weight: bold;
+      margin-left: 24px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      transition: color 0.3s ease;
     }
+
+    /* Hero Section */
     .hero {
-      background-color: #2b7cff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0d6efd;
       color: white;
-      padding: 60px 20px;
-      text-align: center;
+      padding: 80px 40px;
+      border-radius: 0 0 40px 40px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .form-section {
-      background-color: white;
-      margin: 30px auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+    .hero-text {
+      max-width: 520px;
     }
-    .form-section input,
-    .form-section textarea,
-    .form-section button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .contact-buttons a {
+    .hero-text small {
+      background: #fff;
+      color: #0d6efd;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
       display: inline-block;
-      margin: 5px 10px;
-      padding: 10px 15px;
-      background-color: #2b7cff;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
+      margin-bottom: 16px;
+      font-size: 14px;
     }
-    footer {
-      background-color: #0047ab;
-      color: white;
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .hero-text h1 span {
+      color: #ff9f00;
+    }
+    .hero-image img {
+      max-width: 320px;
+      border-radius: 24px;
+      box-shadow: 0 12px 24px rgb(13 110 253 / 0.25);
+    }
+
+    /* Form Section */
+    .form-container {
+      background: white;
+      max-width: 720px;
+      margin: -60px auto 60px auto;
+      padding: 40px 32px;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgb(0 0 0 / 0.1);
       text-align: center;
-      padding: 10px;
+    }
+    .form-container h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #0d6efd;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+    }
+    form input {
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      transition: border-color 0.3s ease;
+    }
+    form input:focus {
+      outline: none;
+      border-color: #0d6efd;
+      box-shadow: 0 0 8px #0d6efd66;
+    }
+    form button {
+      grid-column: 1 / -1;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      background-color: #0d6efd;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #084cd6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 24px;
+      }
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      form {
+        grid-template-columns: 1fr;
+      }
+      form button {
+        grid-column: 1;
+      }
+      .hero-image img {
+        max-width: 80vw;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Daksh Drycleaners</h1>
-  </header>
 
+<header>
+  <div class="logo">Daksh Drycleaners</div>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#complaint">Complaint</a>
-    <a href="#contact">Contact Us</a>
+    <a href="#">Our Services</a>
+    <a href="#">Our Stores</a>
+    <a href="#">Pricing</a>
+    <a href="#">Consultancy</a>
+    <a href="#">Get Franchise</a>
+    <a href="#">Our Blog</a>
   </nav>
+</header>
 
-  <section class="hero" id="home">
-    <h2>Dry Clean & Laundry with 48h delivery in your city</h2>
-    <p>Best Cleaning Service - Qualified Team Work</p>
-  </section>
+<section class="hero">
+  <div class="hero-text">
+    <small>25% off for new user <strong>MY25</strong></small>
+    <h1>Dry Clean & Laundry with 48h delivery in <span>jhai</span></h1>
+  </div>
+  <div class="hero-image">
+    <img src="https://i.imgur.com/fy8eL7P.png" alt="Woman holding folded towels" />
+  </div>
+</section>
 
-  <section class="form-section" id="services">
-    <h2>Our Services</h2>
-    <p>We provide dry cleaning, laundry, and ironing services with pick & drop at your doorstep.</p>
-  </section>
+<section class="form-container">
+  <h2>Get Free Pickup Service</h2>
+  <form id="pickupForm">
+    <input type="text" name="location" placeholder="Location" required />
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="tel" name="phone" placeholder="Mobile Number" required />
+    <input type="text" name="address" placeholder="Address" required />
+    <button type="submit">Submit</button>
+  </form>
+</section>
 
-  <section class="form-section" id="pricing">
-    <h2>Pricing</h2>
-    <p>Shirt(wash): ₹20 | Pant(wash): ₹20 | Bedsheet(wash): ₹40 | Blanket(wash): ₹40</p>
-  </section>
+<script>
+  const form = document.getElementById('pickupForm');
 
-  <section class="form-section" id="complaint">
-    <h2>Complaint Form</h2>
-    <input type="text" placeholder="Your Name" />
-    <input type="text" placeholder="Order ID (if any)" />
-    <textarea placeholder="Your Complaint"></textarea>
-    <button>Submit Complaint</button>
-  </section>
+  // Your WhatsApp number here, in international format without '+' or '00'
+  const whatsappNumber = '916375064350'; // <-- Replace with your WhatsApp number
 
-  <section class="form-section" id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-buttons">
-      <a href="tel:+916375064350">📞 Call Us</a>
-      <a href="https://wa.me/916375064350" target="_blank">💬 WhatsApp</a>
-      <a href="mailto:dakshdetwal10@email.com">📧 Email Us</a>
-    </div>
-  </section>
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  <footer>
-    &copy; 2025 Daksh Drycleaners. All rights reserved.
-  </footer>
+    const location = form.location.value.trim();
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const address = form.address.value.trim();
+
+    if (!location || !name || !phone || !address) {
+      alert('Please fill all fields');
+      return;
+    }
+
+    // Prepare the message text (encoded for URL)
+    let message = 
+      `Hello Daksh Drycleaners,%0A` + 
+      `I would like to request a pickup service with the following details:%0A` +
+      `Location: ${encodeURIComponent(location)}%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Mobile Number: ${encodeURIComponent(phone)}%0A` +
+      `Address: ${encodeURIComponent(address)}`;
+
+    // WhatsApp URL format
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    // Open WhatsApp chat in new tab
+    window.open(whatsappURL, '_blank');
+  });
+</script>
+
 </body>
 </html>
