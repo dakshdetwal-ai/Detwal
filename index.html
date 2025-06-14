@@ -1,236 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daksh Drycleaners</title>
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #f7f9fc;
-      color: #333;
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-    a {
-      text-decoration: none;
-      color: #333;
-    }
-    a:hover {
-      color: #0d6efd;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>gulshan.com</title>
+<!-- Google Material Icons CDN -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset and global */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif, Arial, sans-serif;
+    color: #041237;
+    background: #fff;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Container max widths for large screens */
+  .container {
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 1440px;
+  }
 
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: white;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 24px;
-      color: #0d6efd;
-      cursor: default;
-    }
-    nav a {
-      margin-left: 24px;
-      font-weight: 600;
-      font-size: 14px;
-      color: #333;
-      transition: color 0.3s ease;
-    }
+  /* Top utility nav */
+  .topbar {
+    font-size: 0.875rem;
+    background: #fff;
+    color: #041237;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .topbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 0;
+  }
+  .topbar nav {
+    flex-grow: 1;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .topbar nav a {
+    color: #041237;
+    font-weight: 500;
+    border-right: 1px solid #041237;
+    padding: 0 8px;
+  }
+  .topbar nav a:last-child {
+    border-right: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .topbar nav a .material-icons {
+    font-size: 16px;
+  }
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #0d6efd;
-      color: white;
-      padding: 80px 40px;
-      border-radius: 0 0 40px 40px;
-      gap: 40px;
+  /* Header area */
+  header {
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #041237;
+  }
+  .logo svg {
+    width: 40px;
+    height: 28px;
+    margin-right: 8px;
+  }
+  /* Phone contact */
+  .contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #041237;
+  }
+  .contact-phone .material-icons {
+    font-size: 20px;
+  }
+  /* Search Bar */
+  .search-container {
+    flex: 1 1 300px;
+    max-width: 500px;
+    margin: 8px 16px;
+  }
+  .search-container input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline-offset: 2px;
+  }
+  .search-container input::placeholder {
+    color: #9ca3af;
+  }
+  /* User actions */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #041237;
+  }
+  .actions a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .actions .material-icons {
+    font-size: 20px;
+  }
+
+  /* Main navigation bar */
+  nav.main-nav {
+    background: #fff7f6;
+    border-bottom: 1px solid #f1e2df;
+  }
+  nav.main-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 24px;
+    padding: 14px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  nav.main-nav a {
+    color: #041237;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  nav.main-nav a:hover,
+  nav.main-nav a:focus {
+    color: #f64a7e; /* Accent pink */
+    outline: none;
+  }
+
+  /* Featured buttons on right side of main nav */
+  .nav-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+  }
+  .nav-buttons button,
+  .nav-buttons .btn-label {
+    padding: 6px 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-3dtry {
+    background-color: #00b3a7;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .btn-blu {
+    background-color: #e0ebf5;
+    color: #2b2f58;
+    font-size: 1.2rem;
+    font-weight: 900;
+  }
+  .btn-goldmax {
+    background-color: #000;
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Hero banner container */
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 600px;
+    object-fit: cover;
+  }
+
+  /* Responsive adjustments */
+
+  /* Breakpoints */
+  @media (max-width: 767px) {
+    /* Topbar nav becomes stacked vertically, smaller font */
+    .topbar .container {
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.8rem;
+    }
+    .topbar nav {
+      justify-content: center;
+    }
+    .header-container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .search-container {
+      max-width: 100%;
+      margin: 8px 0;
+    }
+    .actions {
+      justify-content: center;
+      gap: 16px;
       flex-wrap: wrap;
     }
-    .hero-text {
-      max-width: 520px;
+    nav.main-nav .container {
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.8rem;
+      padding: 10px 0;
     }
-    .hero-text small {
-      background: #fff;
-      color: #0d6efd;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 16px;
-      font-size: 14px;
+    .nav-buttons {
+      margin-left: 0;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-    .hero-text h1 span {
-      color: #ff9f00;
-    }
-    .hero-image img {
-      max-width: 320px;
-      border-radius: 24px;
-      box-shadow: 0 12px 24px rgb(13 110 253 / 0.25);
-    }
+  }
 
-    /* Form Section */
-    .form-container {
-      background: white;
-      max-width: 720px;
-      margin: -60px auto 60px auto;
-      padding: 40px 32px;
-      border-radius: 24px;
-      box-shadow: 0 12px 40px rgb(0 0 0 / 0.1);
-      text-align: center;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .search-container {
+      max-width: 350px;
+      margin: 0 12px;
     }
-    .form-container h2 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 32px;
-      color: #0d6efd;
-    }
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 32px;
-    }
-    form input {
-      padding: 14px 16px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 12px;
-      transition: border-color 0.3s ease;
-    }
-    form input:focus {
-      outline: none;
-      border-color: #0d6efd;
-      box-shadow: 0 0 8px #0d6efd66;
-    }
-    form button {
-      grid-column: 1 / -1;
-      padding: 16px;
-      font-weight: 700;
-      font-size: 18px;
-      color: white;
-      background-color: #0d6efd;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    form button:hover {
-      background-color: #084cd6;
-    }
+  }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        padding: 40px 24px;
-      }
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-      form {
-        grid-template-columns: 1fr;
-      }
-      form button {
-        grid-column: 1;
-      }
-      .hero-image img {
-        max-width: 80vw;
-      }
+  @media (min-width: 1024px) {
+    .header-container {
+      flex-wrap: nowrap;
     }
-  </style>
+    .search-container {
+      margin: 0 24px;
+    }
+    nav.main-nav .container {
+      padding: 18px 0;
+      gap: 32px;
+    }
+  }
+</style>
 </head>
 <body>
+  <!-- Top Bar Navigation -->
+  <div class="topbar" role="region" aria-label="Top utility navigation">
+    <div class="container">
+      <nav aria-label="Secondary navigation links">
+        <a href="#" tabindex="0">Do More, Be More</a>
+        <a href="#" tabindex="0">StoreLocator</a>
+        <a href="#" tabindex="0">Singapore</a>
+        <a href="#" tabindex="0">UAE</a>
+        <a href="#" tabindex="0">John Jacobs</a>
+        <a href="#" tabindex="0">Aqualens</a>
+        <a href="#" tabindex="0">Cobrowsing</a>
+        <a href="#" tabindex="0">Engineering Blog</a>
+        <a href="#" tabindex="0">Partner With Us</a>
+        <a href="#" tabindex="0">Meet our Stars <span role="img" aria-label="Star">★</span></a>
+      </nav>
+    </div>
+  </div>
 
-<header>
-  <div class="logo">Daksh Drycleaners</div>
-  <nav>
-    <a href="#">Our Services</a>
-    <a href="#">Our Stores</a>
-    <a href="#">Pricing</a>
-    <a href="#">Consultancy</a>
-    <a href="#">Get Franchise</a>
-    <a href="#">Our Blog</a>
+  <!-- Header with logo, contact, search, and user actions -->
+  <header role="banner" aria-label="Website header with navigation and search">
+    <div class="container header-container">
+      <a href="#" class="logo" aria-label="Navigate to homepage">
+        <!-- Glasses Icon SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#041237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+        gulshan.com
+      </a>
+      <div class="contact-phone" aria-label="Contact phone number">
+        <span class="material-icons" aria-hidden="true">local_phone</span>
+        99998 99998
+      </div>
+      <div class="search-container">
+        <input
+          type="search"
+          aria-label="Search products"
+          placeholder="What are you looking for?"
+          spellcheck="false"
+          autocomplete="off"
+          name="site-search"
+        />
+      </div>
+      <div class="actions" role="navigation" aria-label="User account actions">
+        <a href="#" aria-label="Track order">Track Order</a>
+        <a href="#" aria-label="Sign in and sign up">Sign In & Sign Up</a>
+        <a href="#" aria-label="Wishlist"><span class="material-icons" aria-hidden="true">favorite_border</span></a>
+        <a href="#" aria-label="Shopping cart"><span class="material-icons" aria-hidden="true">shopping_bag</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation Bar -->
+  <nav role="navigation" aria-label="Primary site navigation" class="main-nav" >
+    <div class="container" style="align-items:center;">
+      <a href="#" tabindex="0">Eyeglasses</a>
+      <a href="#" tabindex="0">Screen Glasses</a>
+      <a href="#" tabindex="0">Kids Glasses</a>
+      <a href="#" tabindex="0">Contact Lenses</a>
+      <a href="#" tabindex="0">Sunglasses</a>
+      <a href="#" tabindex="0">Home Eye-Test</a>
+      <a href="#" tabindex="0">Store Locator</a>
+
+      <div class="nav-buttons" aria-label="Special service buttons">
+        <button class="btn-3dtry" aria-label="3D Try On">3D Try On</button>
+        <div class="btn-blu" aria-label="BLU Brand">BLU</div>
+        <div class="btn-goldmax" aria-label="Gold Max Brand">GOLD <span style="font-weight:900;">MAX</span></div>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <div class="hero-text">
-    <small>25% off for new user <strong>MY25</strong></small>
-    <h1>Dry Clean & Laundry with 48h delivery in <span>jhai</span></h1>
-  </div>
-  <div class="hero-image">
-    <img src="https://i.imgur.com/fy8eL7P.png" alt="Woman holding folded towels" />
-  </div>
-</section>
-
-<section class="form-container">
-  <h2>Get Free Pickup Service</h2>
-  <form id="pickupForm">
-    <input type="text" name="location" placeholder="Location" required />
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="tel" name="phone" placeholder="Mobile Number" required />
-    <input type="text" name="address" placeholder="Address" required />
-    <button type="submit">Submit</button>
-  </form>
-</section>
-
-<script>
-  const form = document.getElementById('pickupForm');
-
-  // Your WhatsApp number here, in international format without '+' or '00'
-  const whatsappNumber = '916375064350'; // <-- Replace with your WhatsApp number
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const location = form.location.value.trim();
-    const name = form.name.value.trim();
-    const phone = form.phone.value.trim();
-    const address = form.address.value.trim();
-
-    if (!location || !name || !phone || !address) {
-      alert('Please fill all fields');
-      return;
-    }
-
-    // Prepare the message text (encoded for URL)
-    let message = 
-      `Hello Daksh Drycleaners,%0A` + 
-      `I would like to request a pickup service with the following details:%0A` +
-      `Location: ${encodeURIComponent(location)}%0A` +
-      `Name: ${encodeURIComponent(name)}%0A` +
-      `Mobile Number: ${encodeURIComponent(phone)}%0A` +
-      `Address: ${encodeURIComponent(address)}`;
-
-    // WhatsApp URL format
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-
-    // Open WhatsApp chat in new tab
-    window.open(whatsappURL, '_blank');
-  });
-</script>
-
+  <!-- Hero banner with updated image from placeholder -->
+  <section class="hero-banner" aria-label="Promotional banner showing reading wolf character with glasses">
+    <img
+      src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bdfb0993-dd0c-4881-bba1-3fbf556fba41.png"
+      alt="Wolf wearing sunglasses reading a book in a cozy indoor setting, bookshelf in background with warm light"
+      loading="lazy"
+      width="1920"
+      height="600"
+    />
+  </section>
 </body>
 </html>
+
