@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daksh AI - Nova: GPT-4 Powered AI Calling Automation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-purple': '#bc3cd8',
+                        'cyber-pink': '#ff2d75',
+                        'electric-blue': '#00c6ff',
+                        'dark-bg': '#0a0a14',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --neon-purple: #bc3cd8;
-            --cyber-pink: #ff2d75;
-            --electric-blue: #00c6ff;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a14;
-            color: white;
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
         
         .gradient-text {
@@ -49,11 +56,11 @@
         
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--neon-purple);
+            border-color: #bc3cd8;
         }
         
         .cta-button {
-            background: linear-gradient(90deg, var(--neon-purple), var(--cyber-pink));
+            background: linear-gradient(90deg, #bc3cd8, #ff2d75);
             transition: all 0.3s ease;
         }
         
@@ -65,20 +72,14 @@
         .step-connector {
             position: relative;
             height: 2px;
-            background: linear-gradient(90deg, var(--neon-purple), var(--electric-blue));
+            background: linear-gradient(90deg, #bc3cd8, #00c6ff);
         }
         
         .step-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--electric-blue);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            background: #00c6ff;
         }
         
         .floating {
@@ -86,4 +87,590 @@
         }
         
         .testimonial-card {
-            bac
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: #00c6ff;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg font-inter text-white">
+    <!-- Navbar -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40" alt="Daksh AI logo - futuristic AI company logo with purple and blue gradient elements" class="mr-2">
+                <span class="text-xl font-poppins font-bold">Daksh <span class="gradient-text">AI</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="hover:text-electric-blue transition">Features</a>
+                <a href="#how-it-works" class="hover:text-electric-blue transition">How it works</a>
+                <a href="#testimonials" class="hover:text-electric-blue transition">Testimonials</a>
+                <a href="#pricing" class="hover:text-electric-blue transition">Pricing</a>
+            </div>
+            <button class="px-6 py-2 rounded-full cta-button font-medium text-white glow">
+                Get Started
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-poppins font-bold mb-6 leading-tight">
+                        Let <span class="gradient-text">Nova</span> handle your customer calls, 24x7 — powered by GPT-4
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8">Turn voice conversations into qualified leads with India's first Hinglish-speaking AI voicebot.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="px-8 py-4 rounded-full cta-button font-medium text-white text-lg glow">
+                            Get Started with Nova
+                        </button>
+                        <button class="px-8 py-4 rounded-full bg-transparent border border-electric-blue text-electric-blue font-medium text-lg hover:bg-electric-blue hover:bg-opacity-10 transition">
+                            Book a Demo
+                        </button>
+                    </div>
+                    <p class="mt-4 text-gray-400">100 free calls. No credit card required.</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative floating">
+                        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_rdhgjpgp.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+                        <div class="absolute inset-0 rounded-full bg-neon-purple opacity-10 blur-3xl" style="z-index: -1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-12 bg-opacity-50 bg-black">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-gray-400 mb-8">Trusted by 50+ businesses across India</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
+                <img src="https://placehold.co/120x40" alt="Fortis Healthcare logo" class="h-8">
+                <img src="https://placehold.co/120x40" alt="DLF Real Estate logo" class="h-8">
+                <img src="https://placehold.co/120x40" alt="Allen Coaching logo" class="h-8">
+                <img src="https://placehold.co/120x40" alt="Apollo Hospitals logo" class="h-8">
+                <img src="https://placehold.co/120x40" alt="Byjus Education logo" class="h-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-16">Powerful Features for <span class="gradient-text">Lead Generation</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-neon-purple bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-3">Natural Conversations</h3>
+                    <p class="text-gray-400">No IVR. No waiting. Just smart, natural Hinglish conversations that customers love.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-neon-purple bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-3">Lead Capture</h3>
+                    <p class="text-gray-400">Automatically capture lead data with smart forms that adapt to the conversation flow.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-neon-purple bg-opacity-20 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-electric-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-3">Real-time Analytics</h3>
+                    <p class="text-gray-400">Track call performance, lead quality, and conversion rates with our intuitive dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-black bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-16">How <span class="gradient-text">Nova</span> Works</h2>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center mb-20">
+                <div class="md:w-1/3 flex flex-col items-center mb-10 md:mb-0">
+                    <div class="w-20 h-20 bg-neon-purple rounded-full flex items-center justify-center text-3xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">Upload Contacts</h3>
+                    <p class="text-gray-400 text-center">Simply upload your contact list via CSV or connect your CRM</p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/3 flex justify-center">
+                    <div class="step-connector w-full">
+                        <div class="step-dot absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3 flex flex-col items-center mb-10 md:mb-0">
+                    <div class="w-20 h-20 bg-neon-purple rounded-full flex items-center justify-center text-3xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">Nova Makes Calls</h3>
+                    <p class="text-gray-400 text-center">Nova calls your contacts with natural, engaging conversations</p>
+                </div>
+                
+                <div class="hidden md:block md:w-1/3 flex justify-center">
+                    <div class="step-connector w-full">
+                        <div class="step-dot absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-neon-purple rounded-full flex items-center justify-center text-3xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">You Get Leads</h3>
+                    <p class="text-gray-400 text-center">Receive qualified leads directly in your dashboard or CRM</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center">
+                <button class="px-8 py-4 rounded-full cta-button font-medium text-white text-lg glow">
+                    Start Your Free Trial
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-16">What Our <span class="gradient-text">Customers</span> Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://placehold.co/60x60" alt="Rajesh Kumar, Director of Sunil Nursing Home smiling" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <h4 class="font-poppins font-bold">Rajesh Kumar</h4>
+                            <p class="text-gray-400 text-sm">Director, Sunil Nursing Home</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"Nova has transformed our patient appointment system. We've seen a 40% increase in follow-up visits since implementing it."</p>
+                    <div class="flex mt-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://placehold.co/60x60" alt="Priya Sharma, Marketing Head of EduSmart Coaching Center" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <h4 class="font-poppins font-bold">Priya Sharma</h4>
+                            <p class="text-gray-400 text-sm">Marketing Head, EduSmart</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"The Hinglish conversations make our students feel comfortable immediately. Nova books more demo classes than our human team!"</p>
+                    <div class="flex mt-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://placehold.co/60x60" alt="Amit Patel, Sales Director of Urban Spaces Realtors" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <h4 class="font-poppins font-bold">Amit Patel</h4>
+                            <p class="text-gray-400 text-sm">Sales Director, Urban Spaces</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"Nova qualifies leads better than any human agent we've had. It saves us 60 man-hours per week while increasing conversions."</p>
+                    <div class="flex mt-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-6">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+            <p class="text-center text-gray-400 mb-16">No hidden fees. Cancel anytime.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">Starter</h3>
+                    <p class="text-4xl font-poppins font-bold text-center mb-4">₹2,999<span class="text-lg text-gray-400">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">500 calls per month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Basic call analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Email support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full px-6 py-3 rounded-full border border-electric-blue text-electric-blue font-medium hover:bg-electric-blue hover:bg-opacity-10 transition">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div class="feature-card p-8 rounded-2xl relative border-2 border-neon-purple">
+                    <div class="absolute top-0 right-0 bg-neon-purple px-4 py-1 rounded-bl-lg rounded-tr-lg text-xs font-medium">
+                        POPULAR
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">Growth</h3>
+                    <p class="text-4xl font-poppins font-bold text-center mb-4">₹7,999<span class="text-lg text-gray-400">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">2,000 calls per month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Advanced analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Priority support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">CRM integration</span>
+                        </li>
+                    </ul>
+                    <button class="w-full px-6 py-3 rounded-full cta-button font-medium text-white">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-poppins font-bold mb-3 text-center">Enterprise</h3>
+                    <p class="text-4xl font-poppins font-bold text-center mb-4">Custom</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Unlimited calls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Custom integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-electric-blue mt-0.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-400">Premium support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full px-6 py-3 rounded-full border border-electric-blue text-electric-blue font-medium hover:bg-electric-blue hover:bg-opacity-10 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-12">* First 100 calls are free for all plans</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center mb-16">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item pb-6">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-poppins font-medium">How does Nova handle regional accents and languages?</h3>
+                        <svg class="w-6 h-6 text-electric-blue transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 text-gray-400">
+                        Nova is trained on thousands of hours of Indian speech patterns across various accents and dialects. It understands Hindi, English, and Hinglish seamlessly, adapting to regional variations automatically. Our proprietary accent-mapping technology ensures comprehension rates above 92% for all major Indian accents.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item pb-6">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-poppins font-medium">Can I customize Nova's conversation scripts?</h3>
+                        <svg class="w-6 h-6 text-electric-blue transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 text-gray-400">
+                        Absolutely! Our intuitive script editor lets you customize every aspect of Nova's conversations. You can define multiple conversation paths based on customer responses, set specific data collection points, and even inject personality traits to match your brand voice. Changes take effect instantly across all calls.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item pb-6">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-poppins font-medium">What happens if Nova encounters a question it can't answer?</h3>
+                        <svg class="w-6 h-6 text-electric-blue transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 text-gray-400">
+                        Nova follows your escalation rules. Typically, it will politely offer to have a human call back immediately or schedule a callback during business hours. All such occurrences are flagged in your dashboard with the exact conversation context, so your team can follow up appropriately.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item pb-6">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-poppins font-medium">How is billing handled for partial months?</h3>
+                        <svg class="w-6 h-6 text-electric-blue transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 text-gray-400">
+                        We prorate your first month's bill based on your signup date. For example, if you join on the 15th of October, you'll be billed for just half the month's fee. Your next billing cycle will start on the 1st of November. All plans include rollover credits for unused calls up to your plan limit.
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item pb-6">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-poppins font-medium">What integrations does Nova support?</h3>
+                        <svg class="w-6 h-6 text-electric-blue transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mt-3 text-gray-400">
+                        Nova integrates with popular CRMs like Salesforce, HubSpot, and Zoho. We also support WhatsApp Business API, email marketing platforms, and custom webhooks. Our open API allows for any additional integrations your business might need. Enterprise plans include custom integration development.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 hero-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-poppins font-bold mb-8">Ready to transform your <span class="gradient-text">lead generation</span>?</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Join 50+ businesses using Nova to automate customer calls and capture more leads than ever before.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="px-8 py-4 rounded-full cta-button font-medium text-white text-lg glow">
+                    Get Started with Nova
+                </button>
+                <button class="px-8 py-4 rounded-full bg-transparent border-2 border-electric-blue text-electric-blue font-medium text-lg hover:bg-electric-blue hover:bg-opacity-10 transition">
+                    Book a Demo
+                </button>
+            </div>
+            <p class="mt-6 text-gray-400">100 free calls. No credit card required.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/40x40" alt="Daksh AI logo - futuristic AI company logo with purple and blue gradient elements" class="mr-2">
+                        <span class="text-xl font-poppins font-bold">Daksh <span class="gradient-text">AI</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">India's first GPT-4 powered voicebot for business</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-electric-blue transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-electric-blue transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-electric-blue transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-electric-blue transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.197.088-.397.17-.6.253 4.34-1.41 7.302-3.992 7.898-4.35a8.492 8.492 0 01-16.567 3.918zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.803-5.243.337.975.655 1.986.955 3.018A8.485 8.485 0 0112 20.547z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg mb-4">Product</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Features</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Pricing</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Integrations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">About</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Careers</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Blog</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Privacy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Terms</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">GDPR</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-electric-blue transition">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2023 Daksh AI. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-electric-blue transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-electric-blue transition">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-electric-blue transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const icon = button.querySelector('svg');
+                
+                // Toggle FAQ content
+                const content = faqItem.querySelector('div');
+                content.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Simple animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.feature-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initialize elements with opacity 0 for animation
+        document.querySelectorAll('.feature-card, .testimonial-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
