@@ -1,0 +1,39 @@
+/* styles/styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a14;
+    color: white;
+}
+
+.chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.input-bar {
+    display: flex;
+    padding: 10px;
+    background-color: #1a1a1a;
+}
+
+.input-bar input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+.input-bar button {
+    background-color: #bc3cd8;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
